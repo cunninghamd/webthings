@@ -1,0 +1,61 @@
+{
+  "name": "temperature-thing",
+  "display_name": "Temperature Sensor Thing",
+  "version": "0.0.1",
+  "description": "A temperature sensor web thing",
+  "author": "Derek Cunningham",
+  "license": "MPL-2.0",
+  "scripts": {
+    "lint": "eslint ."
+  },
+  "main": "index.js",
+  "keywords": [
+    "mozilla",
+    "webthings"
+  ],
+  "homepage": "https://github.com/cunninghamd/webthings",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/cunninghamd/webthings.git"
+  },
+  "moziot": {
+    "api": {
+      "min": 0.1,
+      "max": 2
+    },
+    "enabled": true,
+    "plugin": true,
+    "exec": "{nodeLoader} {path}",
+    "config": {
+      "urls": []
+    },
+    "schema": {
+      "type": "object",
+      "required": [
+        "urls"
+      ],
+      "properties": {
+        "urls": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    }
+  },
+  "dependencies": {
+    "ajv": "^6.10.2",
+    "body-parser": "^1.19.0",
+    "dnssd": "^0.4.1",
+    "ds18x20": "^0.2.0",
+    "express": "^4.17.1",
+    "express-ws": "^4.0.0",
+    "uuid": "^3.3.3",
+    "webthing": "^0.12.0"
+  },
+  "files": [
+    "README.md",
+    "temperature-thing.js"
+  ]
+}
